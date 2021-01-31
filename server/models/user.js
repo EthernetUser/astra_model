@@ -7,7 +7,10 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
     class User extends Model {
-
+        
+        /**
+         * This method receives user's email and password to check him out in the database and returns auth jwt-token.
+         */
         static async loginUser(email, password) {
             const user = await User.findOne({
                 where: {email}
@@ -44,6 +47,9 @@ module.exports = (sequelize, DataTypes) => {
 
         }
 
+        /**
+         *  This method receives user's data to register him in the database.
+         */
         static async registerUser(data) {
 
             const isExist = await User.findOne({
