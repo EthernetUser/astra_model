@@ -3,7 +3,8 @@ const {User} = require('../models')
 class UserController {
 
     /**
-     * This middleware receives { email, password } through request and returns auth token.
+     * This middleware receives { email, password } 
+     * through request and returns auth token.
      */
     static async login(req, res, next) {
         try {

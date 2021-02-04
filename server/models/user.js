@@ -7,16 +7,16 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
     class User extends Model {
-        
+
         /**
          * This method receives user's email and password to check him out in the database and returns auth jwt-token.
          */
         static async loginUser(email, password) {
             const user = await User.findOne({
-                where: {email}
+                where: { email }
             })
 
-            if(!user) {
+            if (!user) {
                 return {
                     message: "Данный пользователь не найден",
                     status: 400
@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
 
             const isPasswordTrue = bcrypt.compareSync(password, user.password)
 
-            if(!isPasswordTrue) {
+            if (!isPasswordTrue) {
                 return {
                     message: "Ошибка логина или пароля",
                     status: 400
@@ -55,13 +55,13 @@ module.exports = (sequelize, DataTypes) => {
             const isExist = await User.findOne({
                 where: {
                     [Op.or]: [
-                        {email: data.email},
-                        {phone: data.phone}
+                        { email: data.email },
+                        { phone: data.phone }
                     ]
                 }
             })
 
-            if(isExist) {
+            if (isExist) {
                 return {
                     message: "Пользователь с данной почтой или телефоном уже существует",
                     status: 400

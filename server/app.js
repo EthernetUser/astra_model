@@ -7,7 +7,7 @@ const PORT = Number(process.env.PORT || require('./config/config.json').PORT)
 app.use(morgan('dev'))
 app.use(express.json())
 app.use(cors())
-app.use('/api/test', require('./routers/test-router'))
+
 app.use('/api/auth', require('./routers/auth-router'))
 
 async function start() {

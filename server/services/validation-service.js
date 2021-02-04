@@ -18,6 +18,26 @@ module.exports = {
         body('role').trim(),
         body('post').trim(),
         body('phone').trim()
+    ],
+    roleCreateValidation: [
+        body('name').exists().withMessage('Нет поля name').notEmpty()
+            .isString()
+    ],
+    roleUpdateValidation: [
+        body('roles').exists().withMessage('Нет поля roles').custom(value => {
+            const roles = JSON.parse(value)
+            if(!roles) {
+                throw new Error('Запрос не содержит объекта roles')
+            }
+            roles.forEach(role => {
+                if(role.name === '') return Promise.reject('Поле name не должно быть пустым')
+            });
+        })
+    ],
+    roleDeleteValidation: [
+        body('id').exists().withMessage('Нет поля id').notEmpty()
+            .isString()
     ]
+
 }
 
