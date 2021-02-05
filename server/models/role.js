@@ -21,6 +21,17 @@ module.exports = (sequelize, DataTypes) => {
         }
 
         static async createRole(name) {
+            const isExisting = await Role.findOne({
+                where: {name}
+            })
+
+            if(isExisting) {
+                return {
+                    message: "Данная роль уже существует",
+                    status: 400
+                }
+            }
+
             const role = await Role.create({
                 name
             })
