@@ -6,7 +6,7 @@ class RoleController {
             const result = await Role.getRole()
             res.status(result.status).json(result)
         } catch (error) {
-
+            res.status(500).json({ message: "Ошибка сервера" })
         }
     }
 
@@ -16,7 +16,7 @@ class RoleController {
             const result = await Role.createRole(name)
             res.status(result.status).json(result)
         } catch (error) {
-
+            res.status(500).json({ message: "Ошибка сервера" })
         }
     }
 
@@ -26,7 +26,7 @@ class RoleController {
             const result = await Role.updateRole(roles)
             res.status(result.status).json(result)
         } catch (error) {
-
+            res.status(500).json({ message: "Ошибка сервера" })
         }
     }
 
@@ -36,7 +36,7 @@ class RoleController {
             const result = await Role.deleteRole(id)
             res.status(result.status).json(result)
         } catch (error) {
-
+            res.status(500).json({ message: "Ошибка сервера" })
         }
     }
 }

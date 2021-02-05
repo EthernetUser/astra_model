@@ -9,6 +9,8 @@ app.use(express.json())
 app.use(cors())
 
 app.use('/api/auth', require('./routers/auth-router'))
+app.use('/api/role', require('./routers/role-router'))
+app.use('/api/roleapi', require('./routers/roleapi-router'))
 
 async function start() {
     try {
