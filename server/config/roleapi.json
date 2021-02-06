@@ -1,0 +1,21 @@
+{
+    "auth": {
+        "register": "REGISTER"
+    },
+    "role": {
+        "get": "GET_ROLES",
+        "create": "CREATE_ROLE",
+        "update": "UPDATE_ROLE",
+        "delete": "DELETE_ROLE"
+    },
+    "post": {
+        "get": "GET_POSTS",
+        "create": "CREATE_POST",
+        "update": "UPDATE_POST",
+        "delete": "DELETE_POST"
+    },
+    "roleapi": {
+        "get": "GET_ROLEAPI",
+        "update": "UPDATE_ROLEAPI"
+    }
+}

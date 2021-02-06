@@ -1,24 +1,25 @@
 'use strict';
+const { auth, role, post, roleapi } = require('../config/roleapi.json')
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
 
     await queryInterface.bulkInsert("roleapis", [
       //AUTH
-      { name: 'REGISTER', roles: "[\"ADMIN\"]" },
+      { name: auth.register, roles: "[\"ADMIN\"]" },
       //ROLE
-      { name: 'GET_ROLES', roles: "[\"ADMIN\"]" },
-      { name: 'CREATE_ROLE', roles: "[\"ADMIN\"]" },
-      { name: 'UPDATE_ROLE', roles: "[\"ADMIN\"]" },
-      { name: 'DELETE_ROLE', roles: "[\"ADMIN\"]" },
+      { name: role.get, roles: "[\"ADMIN\"]" },
+      { name: role.create, roles: "[\"ADMIN\"]" },
+      { name: role.update, roles: "[\"ADMIN\"]" },
+      { name: role.delete, roles: "[\"ADMIN\"]" },
       //POST
-      { name: 'GET_POSTS', roles: "[\"ADMIN\"]" },
-      { name: 'CREATE_POST', roles: "[\"ADMIN\"]" },
-      { name: 'UPDATE_POST', roles: "[\"ADMIN\"]" },
-      { name: 'DELETE_POST', roles: "[\"ADMIN\"]" },
+      { name: post.get, roles: "[\"ADMIN\"]" },
+      { name: post.create, roles: "[\"ADMIN\"]" },
+      { name: post.update, roles: "[\"ADMIN\"]" },
+      { name: post.delete, roles: "[\"ADMIN\"]" },
       //ROLEAPI
-      { name: 'GET_ROLEAPI', roles: "[\"ADMIN\"]" },
-      { name: 'UPDATE_ROLEAPI', roles: "[\"ADMIN\"]" },
+      { name: roleapi.get, roles: "[\"ADMIN\"]" },
+      { name: roleapi.update, roles: "[\"ADMIN\"]" },
     ])
   },
 
