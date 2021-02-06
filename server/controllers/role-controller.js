@@ -23,7 +23,8 @@ class RoleController {
     static async update(req, res, next) {
         try {
             const { roles } = req.body
-            const result = await Role.updateRole(roles)
+            const parsedRoles = JSON.parse(roles)
+            const result = await Role.updateRole(parsedRoles)
             res.status(result.status).json(result)
         } catch (error) {
             res.status(500).json({ message: "Ошибка сервера" })

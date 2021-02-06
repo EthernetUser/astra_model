@@ -29,6 +29,15 @@ module.exports = (sequelize, DataTypes) => {
                 }
             }
 
+            try {
+                JSON.parse(data)
+            } catch (error) {
+                return {
+                    message: "Поле data должна быть стрингифицированным json",
+                    status: 400
+                }
+            }
+
             roleApi.roles = data
             await roleApi.save()
 

@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
         static async getRole() {
             const roles = await Role.findAll()
 
-            if(!roles) {
+            if (!roles) {
                 return {
                     message: "Ролей не найдено",
                     status: 400
@@ -22,10 +22,10 @@ module.exports = (sequelize, DataTypes) => {
 
         static async createRole(name) {
             const isExisting = await Role.findOne({
-                where: {name}
+                where: { name }
             })
 
-            if(isExisting) {
+            if (isExisting) {
                 return {
                     message: "Данная роль уже существует",
                     status: 400
@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
                 name
             })
 
-            if(!role) {
+            if (!role) {
                 return {
                     message: "Не удалось создать роль",
                     status: 400
@@ -50,8 +50,8 @@ module.exports = (sequelize, DataTypes) => {
         }
 
         static async updateRole(data) {
-            for(let role in data) {
-                await Role.update({ name: role.name }, { where: { id: role.id }})
+            for (let i = 0; i < data.length; i++) {
+                await Role.update({ name: data[i].name }, { where: { id: data[i].id } })
             }
 
             return {
@@ -61,7 +61,14 @@ module.exports = (sequelize, DataTypes) => {
         }
 
         static async deleteRole(id) {
-            await Role.destroy({where: id})
+            const isDeleted = await Role.destroy({ where: { id } })
+
+            if(isDeleted === 0){
+                return {
+                    message: "Роль не была удалена",
+                    status: 400
+                }
+            }
 
             return {
                 message: "Роль была удалена",
