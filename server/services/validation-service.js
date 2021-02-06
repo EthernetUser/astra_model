@@ -24,14 +24,14 @@ const auth = {
 const role = {
     roleCreateValidation: [
         body('name').exists().withMessage('Нет поля name').notEmpty()
-            .isString()
+            .isString().trim().toUpperCase()
     ],
     roleUpdateValidation: [
         body('roles').exists().withMessage('Нет поля roles').custom(value => {
             try {
                 const roles = JSON.parse(value)
-                for(let i = 0; i < roles.length; i++) {
-                    if(roles[i].name.trim() === "") {
+                for (let i = 0; i < roles.length; i++) {
+                    if (roles[i].name.trim() === "") {
                         return Promise.reject('Имена API не должны быть пустыми')
                     }
                 }

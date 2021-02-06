@@ -63,7 +63,7 @@ module.exports = (sequelize, DataTypes) => {
         static async deleteRole(id) {
             const isDeleted = await Role.destroy({ where: { id } })
 
-            if(isDeleted === 0){
+            if (isDeleted === 0) {
                 return {
                     message: "Роль не была удалена",
                     status: 400

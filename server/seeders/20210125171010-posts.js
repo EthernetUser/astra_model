@@ -12,10 +12,10 @@ module.exports = {
          * }], {});
          */
         await queryInterface.bulkInsert('posts', [
-            {name: 'Механик'},
-            {name: 'Водитель'},
-            {name: 'Менеджер'},
-            {name: 'Администратор'},
+            { name: 'Механик' },
+            { name: 'Водитель' },
+            { name: 'Менеджер' },
+            { name: 'Администратор' },
         ])
     },
 

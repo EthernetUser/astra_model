@@ -6,10 +6,10 @@ module.exports = (sequelize, DataTypes) => {
     class RoleApi extends Model {
         static async getRoleApi() {
             const roleApi = await RoleApi.findAll()
-            if(!roleApi) {
+            if (!roleApi) {
                 return {
-                   message: "Нет списка ролей для API",
-                   status: 400
+                    message: "Нет списка ролей для API",
+                    status: 400
                 }
             }
 
@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
         static async updateRoleApi(id, data) {
             const roleApi = await RoleApi.findByPk(id)
 
-            if(!roleApi) {
+            if (!roleApi) {
                 return {
                     message: "Роли для API не найдены",
                     status: 400

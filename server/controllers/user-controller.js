@@ -1,4 +1,4 @@
-const {User} = require('../models')
+const { User } = require('../models')
 
 class UserController {
 
@@ -8,11 +8,11 @@ class UserController {
      */
     static async login(req, res, next) {
         try {
-            const {email, password} = req.body
+            const { email, password } = req.body
             const result = await User.loginUser(email, password)
             res.status(result.status).json(result)
         } catch (error) {
-            res.status(500).json({message: "Ошибка сервера"})
+            res.status(500).json({ message: "Ошибка сервера" })
         }
     }
 
@@ -36,7 +36,7 @@ class UserController {
             const result = await User.registerUser(data)
             res.status(result.status).json(result)
         } catch (error) {
-            res.status(500).json({message: "Ошибка сервера", error})
+            res.status(500).json({ message: "Ошибка сервера", error })
         }
     }
 }

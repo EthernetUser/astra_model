@@ -92,7 +92,7 @@ module.exports = (sequelize, DataTypes) => {
                 where: { id }
             })
 
-            if(isDeleted === 0) {
+            if (isDeleted === 0) {
                 return {
                     message: "Должность не была обновленна",
                     status: 400

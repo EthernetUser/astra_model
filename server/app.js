@@ -1,10 +1,8 @@
 const express = require('express')
 const app = express()
-const morgan = require('morgan')
 const cors = require('cors')
 const PORT = Number(process.env.PORT || require('./config/config.json').PORT)
 
-app.use(morgan('dev'))
 app.use(express.json())
 app.use(cors())
 
