@@ -41,6 +41,6 @@ module.exports = {
      * await queryInterface.bulkDelete('People', null, {});
      *
      */
-    await queryInterface.bulkDelete('user', null, {});
+    await queryInterface.bulkDelete('users', null, {});
   }
 };
