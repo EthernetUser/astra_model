@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import AuthContext from './context/AuthContext'
 import useRoutes from './routes'
