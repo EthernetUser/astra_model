@@ -1,0 +1,30 @@
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu__item {
+    list-style: none;
+    margin: 0px 10px;
+    display: block;
+}
+
+.menu__item a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 5px;
+    display: block;
+}
+.menu__item a:hover {
+    color: #697CE7;
+    background-color: #fff;
+}
+
+.menu__item:last-child {
+    margin: 0px 0px 0px 5px;
+}

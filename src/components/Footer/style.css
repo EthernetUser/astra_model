@@ -1,0 +1,12 @@
+.footer {
+    background-color: #697CE7;
+
+}
+
+.footer__body {
+    padding: 15px 0px;
+}
+
+.footer__body p {
+    color: white;
+}

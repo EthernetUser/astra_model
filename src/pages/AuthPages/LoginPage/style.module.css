@@ -1,0 +1,48 @@
+.main__body {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.banner {
+    background-color: #697CE7;
+    padding: 50px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+}
+
+.banner__h1 {
+    font-size: 60px;
+    color: white;
+}
+
+.banner__p {
+    font-size: 30px;
+    color: white;
+}
+
+.login__form {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+}
+
+.login__header {
+    font-size: 30px;
+    margin: 0px 0px 15px 0px;
+}
+
+.login__input {
+    margin: 5px 0px;
+}
+
+.login__span {
+    margin: 5px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.login__p {
+    margin: 0px 10px 0px 0px;
+}
