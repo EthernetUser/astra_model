@@ -8,7 +8,7 @@ import Loader from './components/Loader'
 
 function App() {
   const { token, ready, login, logout } = useAuth()
-  const Authenticated = !!token
+  const Authenticated = token ? true : false
   const route = useRoutes(Authenticated)
 
   if (!ready) {

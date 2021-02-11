@@ -25,6 +25,7 @@ function useAuth() {
     useEffect(() => {
         let data = {}
         let isRemembered = false
+
         if(localStorage.getItem('userData')) {
             data = JSON.parse(localStorage.getItem('userData'))
             isRemembered = false
@@ -32,6 +33,7 @@ function useAuth() {
             data = JSON.parse(sessionStorage.getItem('userData'))
             isRemembered = true
         }
+
         if(data && data.token) {
             login(data.token, isRemembered)
         }

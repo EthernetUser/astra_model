@@ -13,11 +13,10 @@ function Nav() {
     return (
         <nav className="nav">
             <ul className="nav__menu menu">
-                <li className="menu__item"><NavLink to="/">Main</NavLink></li>
-                <li className="menu__item"><NavLink to="/register">Register</NavLink></li>
-                <li className="menu__item"><NavLink to="/settings/posts">Posts</NavLink></li>
-                <li className="menu__item"><NavLink to="/settings/roles">Roles</NavLink></li>
-                <li className="menu__item"><a href="/exit" onClick={logoutHandler}>Exit</a></li>
+                <li className="menu__item"><NavLink to="/">Главная</NavLink></li>
+                <li className="menu__item"><NavLink to="/register">Регистрация пользователя</NavLink></li>
+                <li className="menu__item"><NavLink to="/settings">Настройки</NavLink></li>
+                <li className="menu__item"><a href="/exit" onClick={logoutHandler}>Выйти</a></li>
             </ul>
         </nav>
     )

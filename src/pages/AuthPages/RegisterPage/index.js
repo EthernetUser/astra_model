@@ -3,7 +3,7 @@ import style from './style.module.css'
 function RegisterPage() {
     return (
         <div className={style.main__body}>
-            <h1>Register Page</h1>
+            <h1>Регистерационная страница</h1>
         </div>
     )
 }

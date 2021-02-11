@@ -3,7 +3,7 @@ import style from './style.module.css'
 function MainPage() {
     return (
         <div className={style.main__body}>
-            <h1>Main Page</h1>
+            <h1>Главная страница</h1>
         </div>
     )
 }

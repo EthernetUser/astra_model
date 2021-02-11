@@ -9,13 +9,15 @@
 #root {
     height: 100%;
     width: 100%;
-    display: flex;
+    display: block;
 }
 
-html, body {
-    min-height: 100%;
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
     width: 100%;
-    display: flex;
 }
 
 .App {
@@ -41,12 +43,12 @@ main {
 
 footer {
     grid-area: footer;
-    background-color: #fff;
 }
 
 .container {
     height: 100%;
     width: 90%;
     margin: 0 auto;
+    display: block;
     /* border: 1px solid black; */
 }

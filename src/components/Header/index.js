@@ -7,7 +7,7 @@ function Header() {
         <header className="header">
             <div className="container">
                 <div className="header__body">
-                    <div className="header__logo"><img src={logo} alt=""/></div>
+                    <div className="header__logo">ASTRA MODEL</div>
                     <Nav/>
                 </div>
             </div>

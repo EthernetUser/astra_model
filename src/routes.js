@@ -1,9 +1,10 @@
-import { Redirect, Route, Switch } from 'react-router-dom'
+import { Redirect, Route, Switch, Routes } from 'react-router-dom'
 import LoginPage from './pages/AuthPages/LoginPage'
-import MainPage from './pages/MainPage'
+import MainPage from './pages/@MainPage'
 import RegisterPage from './pages/AuthPages/RegisterPage'
-import PostsPage from './pages/SettingsPages/PostsPage'
-import RolesPage from './pages/SettingsPages/RolesPage'
+import PostsPage from './pages/SettingsPage/PostsPage'
+import RolesPage from './pages/SettingsPage/RolesPage'
+import SettingsPage from './pages/SettingsPage'
 
 function useRoutes(authenticated) {
     if(!authenticated) {
@@ -25,11 +26,8 @@ function useRoutes(authenticated) {
             <Route path="/register" exact>
                 <RegisterPage />
             </Route>
-            <Route path="/settings/posts" exact>
-                <PostsPage />
-            </Route>
-            <Route path="/settings/roles" exact>
-                <RolesPage />
+            <Route path="/settings">
+                <SettingsPage/>
             </Route>
             <Redirect to="/" exact/>
         </Switch>
