@@ -1,4 +1,4 @@
-1) npm install
+1) в корне поекта в консоли ввести команду npm install
 
 2) в папке ./server/config/database.json в "development" ввести настройки бд
 
