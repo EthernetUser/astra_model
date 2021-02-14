@@ -31,7 +31,7 @@ function PostsPage() {
 
     return (
         <div className={style.main__body}>
-            <h1>Страница должностей</h1>
+            <h1>Должности</h1>
             <ul>
                 {posts.map((post, key) => {
                     return (

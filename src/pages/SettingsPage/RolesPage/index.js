@@ -1,4 +1,4 @@
-import {useState, useContext, useEffect, useCallback} from 'react'
+import { useState, useContext, useEffect, useCallback } from 'react'
 import AuthContext from '../../../context/AuthContext'
 import Loader from '../../../components/Loader'
 import useHttp from '../../../hooks/http.hook'
@@ -28,9 +28,10 @@ function RolesPage() {
     if (loading) {
         return <Loader />
     }
+
     return (
         <div className={style.main__body}>
-            <h1>Страница ролей</h1>
+            <h1>Роли</h1>
             <ul>
                 {roles.map((role, key) => {
                     return (

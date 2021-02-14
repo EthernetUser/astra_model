@@ -1,5 +1,4 @@
 import './style.css'
-import logo from '../../img/ASTRA_MODEL_LOGO.png'
 import Nav from '../Nav'
 
 function Header() {

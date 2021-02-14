@@ -1,4 +1,4 @@
-const { useState, useCallback, useEffect } = require('react')
+import  { useCallback, useState, useEffect } from 'react'
 
 function useAuth() {
     const [token, setToken] = useState(null)
@@ -26,7 +26,7 @@ function useAuth() {
         let data = {}
         let isRemembered = false
 
-        if(localStorage.getItem('userData')) {
+        if (localStorage.getItem('userData')) {
             data = JSON.parse(localStorage.getItem('userData'))
             isRemembered = false
         } else if (sessionStorage.getItem('userData')) {
@@ -34,13 +34,13 @@ function useAuth() {
             isRemembered = true
         }
 
-        if(data && data.token) {
+        if (data && data.token) {
             login(data.token, isRemembered)
         }
         setReady(true)
     }, [login])
 
-    return { ready, token, login, logout }
+    return { token, ready, login, logout }
 }
 
 export default useAuth
