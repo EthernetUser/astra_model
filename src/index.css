@@ -13,11 +13,14 @@
 }
 
 html {
-    height: 100%;
+    min-height: 100%;
+    display: flex;
 }
 body {
-    height: 100%;
+    min-height: 100%;
     width: 100%;
+    display: flex;
+    position: relative;
 }
 
 .App {
@@ -33,15 +36,17 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-header {
+.header {
     grid-area: nav;
 }
 
-main {
+.main {
     grid-area: main;
+    display: flex;
+    flex-direction: column;
 }
 
-footer {
+.footer {
     grid-area: footer;
 }
 
@@ -49,6 +54,5 @@ footer {
     height: 100%;
     width: 90%;
     margin: 0 auto;
-    display: block;
     /* border: 1px solid black; */
 }
