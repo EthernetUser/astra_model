@@ -1,0 +1,23 @@
+.alert {
+    background: lightcoral;
+    padding: 10px 10px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text {
+    font-size: 20px;
+}
+
+.btn {
+    border: 1px solid black;
+    cursor: pointer;
+    padding: 5px 7px;
+}
+
+.btn:hover{
+    background-color: #000;
+    color: lightcoral;
+}
