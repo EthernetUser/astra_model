@@ -1,11 +1,13 @@
 import { useCallback, useState } from 'react'
+import { useMessage } from './message.hook'
 
 const useHttp = () => {
     const [loading, setLoading] = useState(false)
-    const request = useCallback( async (url, method = 'GET', body = null, headers = {}) => {
+    const { show } = useMessage()
+    const request = useCallback(async (url, method = 'GET', body = null, headers = {}) => {
         setLoading(true)
         try {
-            if(body) {
+            if (body) {
                 body = JSON.stringify(body)
                 headers['Content-Type'] = 'application/json'
             }
@@ -15,7 +17,7 @@ const useHttp = () => {
             })
             const data = await response.json()
 
-            if(!response.ok) {
+            if (!response.ok) {
                 const err = new Error(data.message || "Что то пошло не так")
                 throw err
             }
@@ -24,10 +26,11 @@ const useHttp = () => {
             return data
         } catch (error) {
             setLoading(false)
-            console.log(error)
+            show(error.message || "Что то пошло не так")
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-    
+
     return {
         request,
         loading

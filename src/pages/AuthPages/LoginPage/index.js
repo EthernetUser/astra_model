@@ -1,13 +1,15 @@
 import React, { useState, useContext } from 'react'
 import style from './style.module.css'
 import AuthContext from '../../../context/AuthContext'
+import { useMessage } from '../../../hooks/message.hook'
 import useHttp from '../../../hooks/http.hook'
 import Loader from '../../../components/Loader'
 
 function LoginPage() {
     const { request, loading } = useHttp()
     const { login } = useContext(AuthContext)
-    
+    const { show } = useMessage()
+
     const [remembered, setRemembered] = useState(false)
     const [form, setForm] = useState({
         email: '',
@@ -25,6 +27,10 @@ function LoginPage() {
     const loginHandler = async event => {
         try {
             event.preventDefault()
+            if (form.email === '' || form.password === '') {
+                show('Все поля должны быть заполнены')
+                return
+            }
             const body = form
             const response = await request('api/auth/login', 'POST', body)
             login(response.token, remembered)
