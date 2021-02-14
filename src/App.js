@@ -1,15 +1,20 @@
+import React, { useMemo } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
-import AuthContext from './context/AuthContext'
+import { MessageProvider } from './hooks/message.hook'
 import useRoutes from './routes'
 import useAuth from './hooks/auth.hook'
+import AuthContext from './context/AuthContext'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Loader from './components/Loader'
+import Alert from './components/Alert'
 
 function App() {
   const { token, ready, login, logout } = useAuth()
-  const Authenticated = token ? true : false
-  const route = useRoutes(Authenticated)
+  const authenticated = useMemo(() => {
+    return token ? true : false
+  }, [token])
+  const route = useRoutes(authenticated)
 
   if (!ready) {
     return <Loader />
@@ -19,19 +24,21 @@ function App() {
     <AuthContext.Provider value={{
       token, ready, login, logout
     }}>
-      <Router>
-        <div className="App">
-          {Authenticated && <Header />}
-          <main className="main">
-            <div className="container">
+      <MessageProvider>
+        <Router>
+          <div className="App">
+            {authenticated && <Header />}
+            <main className="main">
+              <div className="container">
+                <Alert />
+                {route}
+              </div>
+            </main>
+            {authenticated && <Footer />}
+          </div>
+        </Router>
+      </MessageProvider>
 
-              {route}
-
-            </div>
-          </main>
-          {Authenticated && <Footer />}
-        </div>
-      </Router>
     </AuthContext.Provider>
   );
 }
