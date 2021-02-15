@@ -1,6 +1,6 @@
 import './style.css'
 
-function Loader() {
+const Loader = () => {
     return (
         <div className="loader">
             <div className="loader__element"></div>

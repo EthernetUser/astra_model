@@ -4,7 +4,7 @@ import Loader from 'src/components/Loader'
 import useHttp from 'src/hooks/http.hook'
 import style from './style.module.css'
 
-function RolesPage() {
+const RolesPage = () => {
     const [roles, setRoles] = useState([])
     const { token } = useContext(AuthContext)
     const { loading, request } = useHttp()

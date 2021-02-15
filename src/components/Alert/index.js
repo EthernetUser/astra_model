@@ -1,7 +1,7 @@
 import style from './style.module.css'
 import { useMessage } from 'src/hooks/message.hook'
 
-function Alert() {
+const Alert = () => {
     const { message, hide, visible } = useMessage()
 
 

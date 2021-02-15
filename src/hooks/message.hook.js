@@ -17,7 +17,7 @@ const reducer = (state, action) => {
     }
 }
 
-export function MessageProvider({ children }) {
+export const MessageProvider = ({ children }) => {
 
     const [state, dispatch] = useReducer(reducer, {
         message: null,

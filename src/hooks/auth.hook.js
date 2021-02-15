@@ -1,6 +1,6 @@
 import  { useCallback, useState, useEffect } from 'react'
 
-function useAuth() {
+const useAuth = () => {
     const [token, setToken] = useState(null)
     const [ready, setReady] = useState(false)
 

@@ -5,7 +5,7 @@ import { useMessage } from 'src/hooks/message.hook'
 import useHttp from 'src/hooks/http.hook'
 import Loader from 'src/components/Loader'
 
-function LoginPage() {
+const LoginPage = () => {
     const { request, loading } = useHttp()
     const { login } = useContext(AuthContext)
     const { show } = useMessage()

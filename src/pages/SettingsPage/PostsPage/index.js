@@ -4,7 +4,7 @@ import style from './style.module.css'
 import useHttp from 'src/hooks/http.hook'
 import Loader from 'src/components/Loader'
 
-function PostsPage() {
+const PostsPage = () => {
     const [posts, setPosts] = useState([])
     const { token } = useContext(AuthContext)
     const { loading, request } = useHttp()

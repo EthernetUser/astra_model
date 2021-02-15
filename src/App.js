@@ -9,7 +9,7 @@ import Footer from './components/Footer'
 import Loader from './components/Loader'
 import Alert from './components/Alert'
 
-function App() {
+const App = () => {
   const { token, ready, login, logout } = useAuth()
   const authenticated = useMemo(() => {
     return token ? true : false

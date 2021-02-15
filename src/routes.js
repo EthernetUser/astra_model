@@ -5,7 +5,7 @@ import MainPage from './pages/@MainPage'
 import RegisterPage from './pages/AuthPages/RegisterPage'
 import SettingsPage from './pages/SettingsPage'
 
-function useRoutes(authenticated) {
+const useRoutes = authenticated => {
     return useMemo(() => {
         if (!authenticated) {
             return (

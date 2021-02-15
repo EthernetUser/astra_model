@@ -1,6 +1,6 @@
 import './style.css'
 
-function Footer() {
+const Footer = () => {
     return (
         <footer className="footer">
             <div className="container">

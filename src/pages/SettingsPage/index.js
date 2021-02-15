@@ -2,7 +2,7 @@ import style from './style.module.css'
 import { NavLink } from 'react-router-dom'
 import useRoutes from './routes'
 
-function SettingsPage() {
+const SettingsPage = () => {
     const route = useRoutes()
 
     return (

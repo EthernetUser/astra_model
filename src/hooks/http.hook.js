@@ -28,8 +28,7 @@ const useHttp = () => {
             setLoading(false)
             show(error.message || "Что то пошло не так")
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    }, [show])
 
     return {
         request,

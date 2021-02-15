@@ -1,6 +1,6 @@
 import style from './style.module.css'
 
-function MainPage() {
+const MainPage = () => {
     return (
         <div className={style.main__body}>
             <h1>Главная страница</h1>

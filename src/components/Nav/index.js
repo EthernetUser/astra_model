@@ -3,7 +3,7 @@ import AuthContext from 'src/context/AuthContext'
 import { NavLink } from 'react-router-dom'
 import './style.css'
 
-function Nav() {
+const Nav = () => {
     const { logout } = useContext(AuthContext)
 
     const logoutHandler = event => {

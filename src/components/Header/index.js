@@ -1,7 +1,7 @@
 import './style.css'
 import Nav from '../Nav'
 
-function Header() {
+const Header = () => {
     return (
         <header className="header">
             <div className="container">
