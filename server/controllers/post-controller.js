@@ -1,4 +1,4 @@
-const { Post } = require('../models')
+const { Post } = require('@models')
 
 class PostController {
     static async get(req, res, next) {

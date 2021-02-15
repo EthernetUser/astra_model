@@ -1,8 +1,8 @@
 import React, { useEffect, useContext, useState, useCallback } from 'react'
-import AuthContext from '../../../context/AuthContext'
+import AuthContext from 'src/context/AuthContext'
 import style from './style.module.css'
-import useHttp from '../../../hooks/http.hook'
-import Loader from '../../../components/Loader'
+import useHttp from 'src/hooks/http.hook'
+import Loader from 'src/components/Loader'
 
 function PostsPage() {
     const [posts, setPosts] = useState([])

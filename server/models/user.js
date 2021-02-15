@@ -1,5 +1,5 @@
 'use strict';
-const jwtSecret = require('../config/config.json').jwtSecret
+const jwtSecret = require('@config').jwtSecret
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const {

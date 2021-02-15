@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken')
-const config = require('../config/config.json')
-const { RoleApi, User } = require('../models')
+const config = require('@config')
+const { RoleApi, User } = require('@models')
 
 function verifyTokenAndRole(apiName) {
     return async function (req, res, next) {

@@ -6,31 +6,33 @@ import RegisterPage from './pages/AuthPages/RegisterPage'
 import SettingsPage from './pages/SettingsPage'
 
 function useRoutes(authenticated) {
-    if (!authenticated) {
+    return useMemo(() => {
+        if (!authenticated) {
+            return (
+                <Switch>
+                    <Route path="/" exact>
+                        <LoginPage />
+                    </Route>
+                    <Redirect to="/" exact />
+                </Switch>
+            )
+        }
+
         return (
             <Switch>
                 <Route path="/" exact>
-                    <LoginPage />
+                    <MainPage />
+                </Route>
+                <Route path="/register" exact>
+                    <RegisterPage />
+                </Route>
+                <Route path="/settings">
+                    <SettingsPage />
                 </Route>
                 <Redirect to="/" exact />
             </Switch>
         )
-    }
-
-    return (
-        <Switch>
-            <Route path="/" exact>
-                <MainPage />
-            </Route>
-            <Route path="/register" exact>
-                <RegisterPage />
-            </Route>
-            <Route path="/settings">
-                <SettingsPage />
-            </Route>
-            <Redirect to="/" exact />
-        </Switch>
-    )
+    }, [authenticated])
 }
 
 export default useRoutes

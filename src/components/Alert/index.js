@@ -1,6 +1,5 @@
-import { useEffect } from 'react'
 import style from './style.module.css'
-import { useMessage } from '../../hooks/message.hook'
+import { useMessage } from 'src/hooks/message.hook'
 
 function Alert() {
     const { message, hide, visible } = useMessage()

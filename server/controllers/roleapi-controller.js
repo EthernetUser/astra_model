@@ -1,4 +1,4 @@
-const { RoleApi } = require('../models')
+const { RoleApi } = require('@models')
 
 class RoleApiController {
     static async get(req, res, next) {

@@ -1,7 +1,7 @@
 import { useState, useContext, useEffect, useCallback } from 'react'
-import AuthContext from '../../../context/AuthContext'
-import Loader from '../../../components/Loader'
-import useHttp from '../../../hooks/http.hook'
+import AuthContext from 'src/context/AuthContext'
+import Loader from 'src/components/Loader'
+import useHttp from 'src/hooks/http.hook'
 import style from './style.module.css'
 
 function RolesPage() {
