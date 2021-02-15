@@ -1,0 +1,15 @@
+{
+    "exclude": [
+        "node_modules"
+    ],
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@config":["./server/config/config.json"],
+            "@routers/*":["./server/routers/*"],
+            "@models":["./server/models"],
+            "@controllers/*":["./server/controllers/*"],
+            "@services/*":["./server/services/*"]
+        }
+    }
+}
