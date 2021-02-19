@@ -61,6 +61,7 @@
     "@models": "./server/models",
     "@controllers": "./server/controllers",
     "@routers": "./server/routers",
-    "@services": "./server/services"
+    "@services": "./server/services",
+    "@validators": "./server/services/validators"
   }
 }

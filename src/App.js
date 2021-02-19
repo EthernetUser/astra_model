@@ -38,7 +38,6 @@ const App = () => {
           </div>
         </Router>
       </MessageProvider>
-
     </AuthContext.Provider>
   );
 }

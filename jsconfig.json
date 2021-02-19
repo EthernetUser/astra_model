@@ -9,7 +9,8 @@
             "@routers/*":["./server/routers/*"],
             "@models":["./server/models"],
             "@controllers/*":["./server/controllers/*"],
-            "@services/*":["./server/services/*"]
+            "@services/*":["./server/services/*"],
+            "@validators/*":["./server/services/validators/*"]
         }
     }
 }
