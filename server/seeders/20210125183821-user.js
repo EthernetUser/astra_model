@@ -21,13 +21,13 @@ module.exports = {
     // }
 
     users.push({
-      email: "okman5757@gmail.com",
+      email: "root",
       password: bcrypt.hashSync('1234', 7),
-      firstName: "Alexsander",
-      lastName: "Melnikov",
+      firstName: "ROOT",
+      lastName: "ROOT",
       role: 'ADMIN',
       post: null,
-      phone: "8 923 234 73 12"
+      phone: "1 111 111 11 11"
     })
 
     await queryInterface.bulkInsert("users", users)
