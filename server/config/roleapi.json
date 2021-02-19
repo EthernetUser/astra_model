@@ -17,5 +17,17 @@
     "roleapi": {
         "get": "GET_ROLEAPI",
         "update": "UPDATE_ROLEAPI"
+    },
+    "task": {
+        "get": "GET_TASK",
+        "getAll": "GET_ALL_TASKS",
+        "getExecuter": "GET_TASK_EXECUTER",
+        "getAllExecuter": "GET_ALL_TASKS_EXECUTER",
+        "create": "CREATE_TASK",
+        "delete": "DELETE_TASK",
+        "deny": "DENY_TASK",
+        "done": "DONE_TASK",
+        "start": "START_TASK",
+        "finish": "FINISH_TASK"
     }
 }

@@ -1,5 +1,6 @@
 require('module-alias/register')
 const express = require('express')
+const path = require('path')
 const app = express()
 const cors = require('cors')
 const PORT = Number(process.env.PORT || require('@config').PORT)
@@ -11,6 +12,15 @@ app.use('/api/auth', require('@routers/auth-router'))
 app.use('/api/role', require('@routers/role-router'))
 app.use('/api/roleapi', require('@routers/roleapi-router'))
 app.use('/api/post', require('@routers/post-router'))
+app.use('/api/task', require('@routers/task-router'))
+
+if(process.env.NODE_ENV === 'production') {
+    app.use('/', express.static(path.join('build')))
+    
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve('build', 'index.html'))
+    })
+}
 
 async function start() {
     try {
