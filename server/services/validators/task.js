@@ -8,9 +8,9 @@ const task = {
     taskCreateValidation: [
         body('name').exists().isString().notEmpty(),
         body('essence').exists().isString().notEmpty(),
-        body('preStartTime').exists().isDate().notEmpty(),
-        body('preFinishTime').exists().isDate().notEmpty(),
-        body('executerId').exists().isInt().notEmpty()
+        body('preStartTime').exists().isString().notEmpty(),
+        body('preFinishTime').exists().isString().notEmpty(),
+        body('executerId').exists().isString().notEmpty()
     ],
     taskStartValidation: [
         body('id').exists().isInt().notEmpty()
@@ -29,4 +29,4 @@ const task = {
     ]
 }
 
-export default task
+module.exports = task

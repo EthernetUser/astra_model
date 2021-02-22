@@ -1,5 +1,5 @@
 'use strict';
-const { auth, role, post, roleapi, task } = require('../config/roleapi.json')
+const { auth, role, post, roleapi, task, user } = require('../config/roleapi.json')
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -31,6 +31,9 @@ module.exports = {
       { name: task.done, roles: "[\"ADMIN\"]" },
       { name: task.start, roles: "[\"ADMIN\"]" },
       { name: task.finish, roles: "[\"ADMIN\"]" },
+      //USER
+      { name: user.get, roles: "[\"ADMIN\"]" },
+      { name: user.getAll, roles: "[\"ADMIN\"]" },
     ])
   },
 

@@ -16,4 +16,4 @@ const post = {
     ]
 }
 
-export default post
+module.exports = post

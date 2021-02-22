@@ -2,7 +2,7 @@ const { Router } = require('express')
 const router = Router()
 const { RoleController } = require('@controllers/role-controller')
 const { verifyTokenAndRole } = require('@services/auth-service')
-const { roleCreateValidation, roleDeleteValidation, roleUpdateValidation } = require('@validators/role').default
+const { roleCreateValidation, roleDeleteValidation, roleUpdateValidation } = require('@validators/role')
 const validDecorator = require('@services/validatedecorator-service')
 const { role } = require('../config/roleapi.json')
 

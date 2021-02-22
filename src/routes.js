@@ -4,6 +4,7 @@ import LoginPage from './pages/AuthPages/LoginPage'
 import MainPage from './pages/@MainPage'
 import RegisterPage from './pages/AuthPages/RegisterPage'
 import SettingsPage from './pages/SettingsPage'
+import TasksPage from "./pages/TasksPages";
 
 const useRoutes = authenticated => {
     return useMemo(() => {
@@ -22,6 +23,9 @@ const useRoutes = authenticated => {
             <Switch>
                 <Route path="/" exact>
                     <MainPage />
+                </Route>
+                <Route path="/tasks">
+                    <TasksPage />
                 </Route>
                 <Route path="/register" exact>
                     <RegisterPage />

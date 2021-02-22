@@ -1,5 +1,3 @@
-import role from 'server/models/role'
-
 const { body } = require('express-validator')
 
 const roleApi = {
@@ -9,4 +7,4 @@ const roleApi = {
     ]
 }
 
-export default roleApi
+module.exports = roleApi

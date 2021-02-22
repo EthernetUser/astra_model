@@ -262,7 +262,7 @@ module.exports = (sequelize, DataTypes) => {
     predictedStartTime: DataTypes.DATE,
     finishTime: DataTypes.DATE,
     predictedFinishTime: DataTypes.DATE,
-    exeuter_id: DataTypes.INTEGER,
+    executer_id: DataTypes.INTEGER,
     report: DataTypes.TEXT,
     denied: DataTypes.BOOLEAN,
     done: DataTypes.BOOLEAN

@@ -2,7 +2,7 @@ const { Router } = require('express')
 const router = Router()
 const { PostController } = require('@controllers/post-controller')
 const { verifyTokenAndRole } = require('@services/auth-service')
-const { postCreateValidation, postDeleteValidation, postUpdateValidation } = require('@validators/post').default
+const { postCreateValidation, postDeleteValidation, postUpdateValidation } = require('@validators/post')
 const validDecorator = require('@services/validatedecorator-service')
 const { post } = require('../config/roleapi.json')
 

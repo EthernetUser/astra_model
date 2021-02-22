@@ -2,7 +2,7 @@ const { Router } = require('express')
 const router = Router()
 const { UserController } = require('@controllers/user-controller')
 const { verifyTokenAndRole } = require('@services/auth-service')
-const { loginValidation, registerValidation } = require('@validators/auth').default
+const { loginValidation, registerValidation } = require('@validators/auth')
 const validDecorator = require('@services/validatedecorator-service')
 const { auth } = require('../config/roleapi.json')
 

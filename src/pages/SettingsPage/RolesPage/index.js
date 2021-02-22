@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect, useCallback } from 'react'
+import React, { useState, useContext, useEffect, useCallback } from 'react'
 import AuthContext from 'src/context/AuthContext'
 import Loader from 'src/components/Loader'
 import useHttp from 'src/hooks/http.hook'
@@ -23,10 +23,19 @@ const RolesPage = () => {
 
     useEffect(() => {
         fetchPosts()
-    }, [fetchPosts])
+    }, [])
 
     if (loading) {
         return <Loader />
+    }
+
+    if(roles.length < 1) {
+        return (
+            <div className={style.main__body}>
+                <h1>Роли</h1>
+                <p>Роли не найдено</p>
+            </div>
+        )
     }
 
     return (

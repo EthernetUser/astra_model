@@ -23,10 +23,19 @@ const PostsPage = () => {
 
     useEffect(() => {
         fetchPosts()
-    }, [fetchPosts])
+    }, [])
 
     if (loading) {
         return <Loader />
+    }
+
+    if(posts.length < 1) {
+        return (
+            <div className={style.main__body}>
+                <h1>Должности</h1>
+                <p>Должностей не найдено</p>
+            </div>
+        )
     }
 
     return (

@@ -26,4 +26,4 @@ const role = {
     ]
 }
 
-export default role
+module.exports = role

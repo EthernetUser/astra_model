@@ -20,7 +20,7 @@ module.exports = {
       },
       startTime: {
         type: Sequelize.DATE,
-        allowNull: false
+        allowNull: true
       },
       predictedStartTime: {
         type: Sequelize.DATE,
@@ -36,7 +36,7 @@ module.exports = {
       },
       executer_id: {
         type: Sequelize.INTEGER,
-        allowNull: true,
+        allowNull: false,
         references: {
           model: 'users',
           key: 'id'

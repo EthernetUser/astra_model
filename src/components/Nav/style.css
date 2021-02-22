@@ -14,17 +14,29 @@
     display: block;
 }
 
-.menu__item a {
+
+.menu__item-unactive {
     text-decoration: none;
     color: white;
     padding: 5px 5px;
     display: block;
+    border-radius: 1px;
 }
-.menu__item a:hover {
+.menu__item-unactive:hover {
+
     color: #697CE7;
     background-color: #fff;
 }
 
 .menu__item:last-child {
     margin: 0px 0px 0px 5px;
+}
+
+.menu__item-active {
+    color: #697CE7;
+    background-color: #fff;
+}
+
+.menu__item-active a {
+    color: #697CE7;
 }

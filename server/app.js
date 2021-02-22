@@ -13,6 +13,7 @@ app.use('/api/role', require('@routers/role-router'))
 app.use('/api/roleapi', require('@routers/roleapi-router'))
 app.use('/api/post', require('@routers/post-router'))
 app.use('/api/task', require('@routers/task-router'))
+app.use('/api/user', require('@routers/user-router'))
 
 if(process.env.NODE_ENV === 'production') {
     app.use('/', express.static(path.join('build')))

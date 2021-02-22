@@ -28,16 +28,18 @@ class TaskController {
             const result = await Task.getTaskByExecuter(id, executer_id)
             res.status(result.status).json(result)
         } catch (error) {
+            console.error(error)
             res.status(500).json({ message: "Ошибка сервера" })
         }
     }
 
     static async getAllByExecuter(req, res, next) {
         try {
-            const executer_id = req.use.id
+            const executer_id = req.user.id
             const result = await Task.getAllTasksByExecuter(executer_id)
             res.status(result.status).json(result)
         } catch (error) {
+            console.error(error)
             res.status(500).json({ message: "Ошибка сервера" })
         }
     }
@@ -47,10 +49,13 @@ class TaskController {
             const data = {
                 name: req.body.name,
                 essence: req.body.essence,
-                preStartTime: req.body.predictedStartTime,
-                preFinishTime: req.body.preditedFinishTime,
-                executerId: req.body.executerId
+                predictedStartTime: req.body.preStartTime,
+                predictedFinishTime: req.body.preFinishTime,
+                executer_id: req.body.executerId,
+                denied: false,
+                done: false
             }
+            console.log(data)
             const result = await Task.createTask(data)
             res.status(result.status).json(result)
         } catch (error) {

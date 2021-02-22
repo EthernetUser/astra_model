@@ -29,5 +29,9 @@
         "done": "DONE_TASK",
         "start": "START_TASK",
         "finish": "FINISH_TASK"
+    },
+    "user": {
+        "get": "GET_USER",
+        "getAll": "GET_ALL_USERS"
     }
 }

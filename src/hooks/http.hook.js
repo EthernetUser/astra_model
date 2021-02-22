@@ -18,6 +18,7 @@ const useHttp = () => {
             const data = await response.json()
 
             if (!response.ok) {
+                console.log(response)
                 const err = new Error(data.message || "Что то пошло не так")
                 throw err
             }
@@ -28,7 +29,7 @@ const useHttp = () => {
             setLoading(false)
             show(error.message || "Что то пошло не так")
         }
-    }, [show])
+    }, [])
 
     return {
         request,
