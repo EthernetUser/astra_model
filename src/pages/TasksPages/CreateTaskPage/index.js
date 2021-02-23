@@ -105,7 +105,7 @@ const CreateTaskPage = () => {
                 <label htmlFor="" className={style.label}>Суть задания:</label>
                 <textarea name="essence" id="" cols="60" rows="10" className={style.input} value={inputs.essence} onChange={changeHandler}></textarea>
 
-                <p inputsclassName={style.label}>Исполнитель: {labelSpan || "не выбран"}</p>
+                <p className={style.label}>Исполнитель: {labelSpan || "не выбран"}</p>
                 <input type="text" className={style.input} placeholder="Поиск..." onFocus={() => setFocused(true)} onBlur={() => setFocused(false)} onChange={(e) => setInputEx(e.target.value)} />
                 {(isFocused && !loading) && (inputEx ? filteredExecutersList : executersList)}
 
