@@ -6,11 +6,12 @@
 
 .menu {
     display: flex;
+    align-items: center;
 }
 
 .menu__item {
     list-style: none;
-    margin: 0px 10px;
+    margin: 0px 0px;
     display: block;
 }
 
@@ -18,7 +19,7 @@
 .menu__item-unactive {
     text-decoration: none;
     color: white;
-    padding: 5px 5px;
+    padding: 18px 15px;
     display: block;
     border-radius: 1px;
 }
@@ -29,7 +30,7 @@
 }
 
 .menu__item:last-child {
-    margin: 0px 0px 0px 5px;
+    margin: 0px 0px 0px 0px;
 }
 
 .menu__item-active {

@@ -8,12 +8,16 @@ const SettingsPage = () => {
     return (
         <>
             <div className={style.main__body}>
-                <h1>Настройки</h1>
-                <ul>
-                    <li><NavLink to="/settings/posts">Должности</NavLink></li>
-                    <li><NavLink to="/settings/roles">Роли</NavLink></li>
-                </ul>
-                {route}
+                <div className="left">
+                    <h1>Настройки</h1>
+                    <ul className={style.menu}>
+                        <li className={style.menu__item}><NavLink to="/settings/roles" className={style.item__link} activeClassName={style['item__link-active']}>Роли</NavLink></li>
+                        <li className={style.menu__item}><NavLink to="/settings/posts" className={style.item__link} activeClassName={style['item__link-active']}>Должности</NavLink></li>
+                    </ul>
+                </div>
+                <div className="right">
+                    {route}
+                </div>
             </div>
         </>
     )

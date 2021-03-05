@@ -7,7 +7,8 @@ export const TaskReducer = (state, action) => {
             state.tasks.splice(action.id, 1)
             return {...state}
         case TaskActions.ADD_MANY:
-            state.tasks = [...state.tasks, ...action.arrTasks]
+            const tasksToAdding = new Set(action.arrTasks)
+            state.tasks = [...tasksToAdding]
             return {...state}
         case TaskActions.REMOVE_MANY:
             action.arrId.forEach(id => state.tasks.splice(id, 1))

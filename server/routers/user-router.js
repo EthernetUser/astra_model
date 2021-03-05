@@ -7,7 +7,7 @@ const { userGetValidation
 const validDecorator = require('@services/validatedecorator-service')
 const { user } = require('../config/roleapi.json')
 
-router.get('/all', verifyTokenAndRole(user.getAll), UserController.getAll)
+router.get('/', verifyTokenAndRole(user.getAll), UserController.getAll)
 router.get('/:id', verifyTokenAndRole(user.get), userGetValidation, validDecorator(UserController.get))
 
 module.exports = router

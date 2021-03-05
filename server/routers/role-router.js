@@ -9,6 +9,6 @@ const { role } = require('../config/roleapi.json')
 router.get('/', verifyTokenAndRole(role.get), RoleController.get)
 router.post('/create', verifyTokenAndRole(role.create), roleCreateValidation, validDecorator(RoleController.create))
 router.delete('/delete', verifyTokenAndRole(role.delete), roleDeleteValidation, validDecorator(RoleController.delete))
-router.patch('/update', verifyTokenAndRole(role.update), roleUpdateValidation, validDecorator(RoleController.update))
+router.put('/update', verifyTokenAndRole(role.update), roleUpdateValidation, validDecorator(RoleController.update))
 
 module.exports = router

@@ -15,9 +15,9 @@ router.get('/executer/all', verifyTokenAndRole(task.getAllExecuter), TaskControl
 router.get('/executer/:id', verifyTokenAndRole(task.getExecuter), taskGetValidation, validDecorator(TaskController.getByExecuter))
 router.post('/create', verifyTokenAndRole(task.create), taskCreateValidation,validDecorator(TaskController.create))
 router.delete('/delete', verifyTokenAndRole(task.delete), taskDeleteValidation, validDecorator(TaskController.delete))
-router.patch('/deny', verifyTokenAndRole(task.deny), taskDenyValidation, validDecorator(TaskController.deny))
-router.patch('/done', verifyTokenAndRole(task.done), taskDoneValidation, validDecorator(TaskController.done))
-router.patch('/start', verifyTokenAndRole(task.start), taskStartValidation, validDecorator(TaskController.start))
-router.patch('/finish', verifyTokenAndRole(task.finish), taskFinishValidation, validDecorator(TaskController.finish))
+router.put('/deny', verifyTokenAndRole(task.deny), taskDenyValidation, validDecorator(TaskController.deny))
+router.put('/done', verifyTokenAndRole(task.done), taskDoneValidation, validDecorator(TaskController.done))
+router.put('/start', verifyTokenAndRole(task.start), taskStartValidation, validDecorator(TaskController.start))
+router.put('/finish', verifyTokenAndRole(task.finish), taskFinishValidation, validDecorator(TaskController.finish))
 
 module.exports = router

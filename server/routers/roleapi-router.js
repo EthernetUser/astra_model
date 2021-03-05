@@ -7,6 +7,6 @@ const validDecorator = require('@services/validatedecorator-service')
 const { roleapi } = require('../config/roleapi.json')
 
 router.get('/', verifyTokenAndRole(roleapi.get), RoleApiController.get)
-router.patch('/update', verifyTokenAndRole(roleapi.update), roleApiUpdateValidation, validDecorator(RoleApiController.update))
+router.put('/update', verifyTokenAndRole(roleapi.update), roleApiUpdateValidation, validDecorator(RoleApiController.update))
 
 module.exports = router
