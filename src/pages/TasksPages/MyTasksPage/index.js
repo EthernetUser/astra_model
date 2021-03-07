@@ -1,33 +1,37 @@
-import React, {useCallback, useContext, useEffect} from 'react'
-import Loader from 'src/components/Loader'
-import AuthContext from 'src/context/AuthContext'
-import useHttp from 'src/hooks/http.hook'
-import {useOthersTask} from 'src/hooks/task.hook'
 import style from './style.module.css'
-import {NavLink} from "react-router-dom";
+import React, {useCallback, useContext, useEffect, useState} from 'react'
+import useHttp from 'src/hooks/http.hook'
+import Loader from 'src/components/Loader'
+import {useTasks} from 'src/hooks/task.hook'
+import AuthContext from 'src/context/AuthContext'
+import RefreshButton from 'src/components/RefreshButton'
+import {NavLink, useHistory} from "react-router-dom";
 
-const OthersTasksPage = () => {
-    const {tasks, isFetched, setFetch, addTasks} = useOthersTask()
+const MyTasksPage = () => {
+    const {loading, request} = useHttp()
     const {token} = useContext(AuthContext)
-    const {request, loading} = useHttp()
+    const {tasks, addTasks, isFetched, setFetch} = useTasks()
+    const history = useHistory()
 
-    const fetchOthersTasks = useCallback(async () => {
+    const fetchTasks = useCallback(async () => {
         try {
             const headers = {
                 authorization: `Bearer ${token}`
             }
-            const data = await request('/api/task/all', 'GET', null, headers)
+            const data = await request('/api/task/executer/all', 'GET', null, headers)
             addTasks(data.tasks)
         } catch (error) {
 
         }
 
         setFetch()
-    }, [addTasks, request, setFetch, token])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     useEffect(() => {
-        if (!isFetched) fetchOthersTasks()
-    }, [fetchOthersTasks, isFetched])
+        if (!isFetched) fetchTasks()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     if (loading) {
         return <Loader/>
@@ -36,22 +40,25 @@ const OthersTasksPage = () => {
     if (tasks.length === 0) {
         return (
             <div className={style.main__body}>
-                <h1>Задания сотрудников</h1>
+                <h1>Мои задания</h1>
+                <RefreshButton callback={fetchTasks} timeout={3000}/>
                 <p>Заданий нет</p>
             </div>
         )
     }
 
+
     return (
         <div className={style.main__body}>
-            <h1>Задания сотрудников</h1>
+            <h1>Мои задания</h1>
+            <RefreshButton callback={fetchTasks} timeout={3000}/>
             <ul className={style.list}>
                 {
                     tasks.map((task, key) => {
                         return (
                             <li key={key} className={style.list__item}>
                                 <NavLink
-                                    to={`/tasks/otherstasks/${task.id}`}>
+                                    to={`/tasks/mytasks/${task.id}`}>
                                     <span>{task.name}</span>
                                     <span>Выполнить к {new Date(Date.parse(task.predictedFinishTime)).toLocaleString()}</span>
                                 </NavLink>
@@ -64,4 +71,4 @@ const OthersTasksPage = () => {
     )
 }
 
-export default OthersTasksPage
+export default MyTasksPage

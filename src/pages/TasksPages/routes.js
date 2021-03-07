@@ -1,14 +1,19 @@
 import { Redirect, Route, Switch } from 'react-router-dom'
 import CreateTaskPage from './CreateTaskPage'
 import DoneTasksPage from './DoneTasksPage'
-import MyTasksPage from './MyTaskPage'
+import MyTasksPage from './MyTasksPage'
+import MyTaskPage from "./MyTaskPage";
 import OthersTasksPage from './OtherTasksPage'
+import React from "react";
 
 const useRoutes = () => {
     return (
         <Switch>
             <Route path="/tasks/mytasks" exact>
                 <MyTasksPage/>
+            </Route>
+            <Route path="/tasks/mytasks/:id" exact>
+                <MyTaskPage/>
             </Route>
             <Route path="/tasks/otherstasks" exact>
                 <OthersTasksPage/>
