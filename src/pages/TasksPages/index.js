@@ -7,7 +7,7 @@ const TasksPages = () => {
     return (
         <div className={style.main__body}>
             <div className={style.left}>
-                <h1>Страница заданий</h1>
+                <h1>Задания</h1>
                 <ul className={style.menu}>
                     <li className={style.menu__item}><NavLink to="/tasks/mytasks" className={style.item__link} activeClassName={style['item__link-active']}>Мои задания</NavLink></li>
                     <li className={style.menu__item}><NavLink to="/tasks/createtask" className={style.item__link} activeClassName={style['item__link-active']}>Создать задание</NavLink></li>

@@ -22,8 +22,7 @@ const Nav = () => {
             <ul className="nav__menu menu">
                 <li className="menu__item"><NavLink to="/" className="menu__item-unactive" activeClassName="menu__item-active" exact>Главная</NavLink></li>
                 <li className="menu__item"><NavLink to="/tasks" className="menu__item-unactive" activeClassName="menu__item-active">Задания</NavLink></li>
-                <li className="menu__item"><NavLink to="/register" className="menu__item-unactive" activeClassName="menu__item-active" exact>Регистрация пользователя</NavLink></li>
-                <li className="menu__item"><NavLink to="/settings" className="menu__item-unactive" activeClassName="menu__item-active">Настройки</NavLink></li>
+                <li className="menu__item"><NavLink to="/settings" className="menu__item-unactive" activeClassName="menu__item-active">Организация</NavLink></li>
                 <li className="menu__item"><a href="/exit" className="menu__item-unactive" onClick={logoutHandler}>Выйти</a></li>
             </ul>
         </nav>

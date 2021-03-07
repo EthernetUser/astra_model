@@ -34,6 +34,10 @@
     margin: 20px 0px 10px 0px;
 }
 
+.label:first-child {
+    margin: 0px 0px 20px 0px;
+}
+
 .btn {
     color: #697CE7;
     margin: 20px 0px 0px 0px;

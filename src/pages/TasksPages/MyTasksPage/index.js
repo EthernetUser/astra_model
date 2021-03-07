@@ -50,8 +50,10 @@ const MyTasksPage = () => {
 
     return (
         <div className={style.main__body}>
+            <span className={style.main__header}>
             <h1>Мои задания</h1>
             <RefreshButton callback={fetchTasks} timeout={3000}/>
+            </span>
             <ul className={style.list}>
                 {
                     tasks.map((task, key) => {
