@@ -5,13 +5,12 @@ import Loader from 'src/components/Loader'
 import {useTasks} from 'src/hooks/task.hook'
 import AuthContext from 'src/context/AuthContext'
 import RefreshButton from 'src/components/RefreshButton'
-import {NavLink, useHistory} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 const MyTasksPage = () => {
     const {loading, request} = useHttp()
     const {token} = useContext(AuthContext)
     const {tasks, addTasks, isFetched, setFetch} = useTasks()
-    const history = useHistory()
 
     const fetchTasks = useCallback(async () => {
         try {

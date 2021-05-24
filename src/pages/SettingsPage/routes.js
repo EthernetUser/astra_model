@@ -1,13 +1,13 @@
 import { Route, Switch, Redirect } from 'react-router-dom'
 import PostsPage from './PostsPage'
-import RolesPage from './RolesPage'
+import UsersPage from './UsersPage'
 
 const useRoutes = () => {
     return (
         <Switch>
             <Route path="/settings/posts" exact component={PostsPage}/>
-            <Route path="/settings/roles" exact component={RolesPage}/>
-            <Redirect to="/settings"/>       
+            <Route path="/settings/users" exact component={UsersPage}/>
+            <Redirect to="/settings"/>
         </Switch>
     )
 }
