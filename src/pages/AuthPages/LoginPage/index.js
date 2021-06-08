@@ -47,7 +47,7 @@ const LoginPage = () => {
         <div className={style.main__body}>
             <div className={style.banner}>
                 <h1 className={style.banner__h1}>ASTRA MODEL</h1>
-                <p className={style.banner__p}>Современная система учета</p>
+                <p className={style.banner__p}>Современная ERP-система</p>
             </div>
             <form className={style.login__form}>
                 <p className={style.login__header}>Войти</p>

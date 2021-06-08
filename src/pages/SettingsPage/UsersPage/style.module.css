@@ -1,3 +1,69 @@
 .main__body {
 
 }
+
+h4 {
+    margin: 0 0 20px 0;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #697CE7;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 0 0 20px 0;
+}
+
+.form__label {
+    margin: 10px 0px;
+}
+
+.form__button {
+    color: #697CE7;
+    margin: 20px 0px 0px 0px;
+    background-color: white;
+    border: 1px solid #697CE7;
+    border-radius: 2px;
+    padding: 10px 5px;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.form__button:hover {
+    background-color: #697CE7;
+    color: white;
+}
+
+.users {
+
+}
+
+.users__user {
+    border: 1px solid #697CE7;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 0 0 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.users__p {
+    display: block;
+    margin: 10px 0px;
+}
+
+.users__user button {
+    color: #f08080;
+    background-color: white;
+    border: 1px solid #f08080;
+    border-radius: 2px;
+    padding: 10px 5px;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.users__user button:hover {
+    background-color: #f08080;
+    color: white;
+}

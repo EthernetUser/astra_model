@@ -1,3 +1,24 @@
 .main__body {
     padding: 20px 0px;
 }
+
+.task {
+    border: 1px solid #697CE7;
+    padding: 10px 15px;
+    margin: 20px 0px;
+}
+
+.task p {
+    margin: 10px 0px;
+}
+
+.task button {
+    color: #697CE7;
+    margin: 0px 0px 10px 0px;
+    background-color: white;
+    border: 1px solid #697CE7;
+    border-radius: 2px;
+    padding: 10px 5px;
+    cursor: pointer;
+    align-self: flex-start;
+}
